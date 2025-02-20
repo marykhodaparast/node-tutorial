@@ -24,4 +24,13 @@
 // window.sayHello();
 
 
-console.log(module);
+//console.log(module);
+
+/** Loading a module */
+const logger = require('./logger')
+
+//logger = 1;
+
+logger('message');
+
+//console.log(logger)

@@ -5,5 +5,5 @@ function log(message) {
     console.log(message);
 }
 
-module.exports.log = log;
+module.exports = log;
 //module.exports.endPoint = url;we will keep the url to be private
