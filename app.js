@@ -54,12 +54,28 @@
 //ES6 /ES2015 :ECMAScript 6
 
 /** FS Module */
-const fs = require("fs");
+// const fs = require("fs");
 
-const files = fs.readdirSync("./");
-console.log(files);
+// const files = fs.readdirSync("./");
+// console.log(files);
 
-fs.readdir("./", function (err, files) {
-    if (err) console.log("Error", err);
-    else console.log('Result', files);
-});
+// fs.readdir("./", function (err, files) {
+//     if (err) console.log("Error", err);
+//     else console.log('Result', files);
+// });
+
+/** Event Module */
+
+
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+//Register a Listener
+emitter.on('messageLogged', function () {
+    console.log('Listener called');
+} );
+//Raise an event
+emitter.emit('messageLogged');
+
+// emit means Making a noise , product - signaling
+
