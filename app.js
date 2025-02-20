@@ -27,10 +27,18 @@
 //console.log(module);
 
 /** Loading a module */
-const logger = require('./logger')
+// const logger = require('./logger')
 
-//logger = 1;
+// //logger = 1;
 
-logger('message');
+// logger('message');
 
 //console.log(logger)
+
+
+/**** PAHT module  */
+const path = require('path');
+
+var pathObj = path.parse(__filename);
+
+console.log(pathObj);
