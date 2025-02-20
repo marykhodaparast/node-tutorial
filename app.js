@@ -18,11 +18,10 @@
 //3rd lesson -> Modules
 
 // var sayHello = function () {
-    
+
 // };
 
 // window.sayHello();
-
 
 //console.log(module);
 
@@ -35,10 +34,21 @@
 
 //console.log(logger)
 
-
 /**** PAHT module  */
-const path = require('path');
+// const path = require('path');
 
-var pathObj = path.parse(__filename);
+// var pathObj = path.parse(__filename);
 
-console.log(pathObj);
+// console.log(pathObj);
+
+/** OS Module */
+
+const os = require("os");
+
+var totalMemory = os.totalmem();
+var freeMemory = os.freemem();
+
+console.log(`Total memory: ${totalMemory}`)
+
+//Template String
+//ES6 /ES2015 :ECMAScript 6 
