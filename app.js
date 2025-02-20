@@ -71,11 +71,17 @@ const EventEmitter = require('events');
 const emitter = new EventEmitter();
 
 //Register a Listener
-emitter.on('messageLogged', function () {
-    console.log('Listener called');
+emitter.on('messageLogged' , (arg) => { //e, eventArg
+    console.log('Listener called', arg);
 } );
 //Raise an event
-emitter.emit('messageLogged');
+emitter.emit('messageLogged', { id: 1, url: 'http://' });
+
+//Raise Logging (data: message)
 
 // emit means Making a noise , product - signaling
+
+/** Event Arguments */
+
+
 
