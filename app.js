@@ -43,12 +43,23 @@
 
 /** OS Module */
 
-const os = require("os");
+// const os = require("os");
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
+// var totalMemory = os.totalmem();
+// var freeMemory = os.freemem();
 
-console.log(`Total memory: ${totalMemory}`)
+// console.log(`Total memory: ${totalMemory}`)
 
 //Template String
-//ES6 /ES2015 :ECMAScript 6 
+//ES6 /ES2015 :ECMAScript 6
+
+/** FS Module */
+const fs = require("fs");
+
+const files = fs.readdirSync("./");
+console.log(files);
+
+fs.readdir("./", function (err, files) {
+    if (err) console.log("Error", err);
+    else console.log('Result', files);
+});
