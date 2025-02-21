@@ -66,25 +66,49 @@
 
 /** Event Module */
 
-const EventEmitter = require("events");
-//const emitter = new EventEmitter();
+// const EventEmitter = require("events");
+// //const emitter = new EventEmitter();
 
-//Raise an event
-//emitter.emit('messageLogged', { id: 1, url: 'http://' });
+// //Raise an event
+// //emitter.emit('messageLogged', { id: 1, url: 'http://' });
 
-const Logger = require("./logger");
-const logger = new Logger();
+// const Logger = require("./logger");
+// const logger = new Logger();
 
-//Register a Listener
-logger.on("messageLogged", (arg) => {
-  //e, eventArg
-  console.log("Listener called", arg);
-});
+// //Register a Listener
+// logger.on("messageLogged", (arg) => {
+//   //e, eventArg
+//   console.log("Listener called", arg);
+// });
 
-logger.log("message");
+// logger.log("message");
 
 //Raise Logging (data: message)
 
 // emit means Making a noise , product - signaling
 
 /** Event Arguments */
+
+
+/*** HTTP Module */
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.write('Hello World!')
+        res.end();
+    }
+
+    if (req.url === '/api/courses') {
+        res.write(JSON.stringify([1, 2, 3]))
+        res.end();
+    }
+});
+
+// server.on('connection', (socket) => {
+//     console.log('New connection...');
+// });
+
+server.listen(3000)
+
+console.log('Listening on port 3000');
