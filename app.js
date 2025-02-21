@@ -66,22 +66,25 @@
 
 /** Event Module */
 
+const EventEmitter = require("events");
+//const emitter = new EventEmitter();
 
-const EventEmitter = require('events');
-const emitter = new EventEmitter();
+//Raise an event
+//emitter.emit('messageLogged', { id: 1, url: 'http://' });
+
+const Logger = require("./logger");
+const logger = new Logger();
 
 //Register a Listener
-emitter.on('messageLogged' , (arg) => { //e, eventArg
-    console.log('Listener called', arg);
-} );
-//Raise an event
-emitter.emit('messageLogged', { id: 1, url: 'http://' });
+logger.on("messageLogged", (arg) => {
+  //e, eventArg
+  console.log("Listener called", arg);
+});
+
+logger.log("message");
 
 //Raise Logging (data: message)
 
 // emit means Making a noise , product - signaling
 
 /** Event Arguments */
-
-
-
